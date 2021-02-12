@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Hello Django   Привет!</title>
+</head>
+<body>
+    <h1>Welcome to Django!  Мы дома!</h1>
+
+
+
+    {% if event_list %}   <!--проверка не пустой ли список -->
+    <ul>
+
+      {% for event in event_list %}
+      <li>
+        {{ event.head }}<br> ({{event.id}}) 
+
+
+
+
+<br>
+{{event.photo}}
+<br>
+    {% if event.photo %}   <!--проверка не пустой ли список -->
+    isJPG --- 
+    <br>
+    {{ event.photo_url }}
+    <br>
+    {{ event.photo }}
+
+    <br>
+
+
+<img src="static{{ event.photo_url }}" height=150>
+ 
+    {% endif %} 
+
+
+
+
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}     <!-- можно использовать elif var2 -->
+      <p>Нет жанров</p>
+    {% endif %} 
+
+
+
+
+</body>
+</html>
