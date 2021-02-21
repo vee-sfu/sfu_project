@@ -9,10 +9,69 @@
 
 <title>СФУ - ППФ</title>
 
-ПРИВЕТ
+<link rel="stylesheet" href="static/css/style.css">
+
+
 </head>
 
 <body>
-Страница
 
+
+
+  <!-- шапка -->
+   <div id="header"> 
+    	</div>
+
+   <div id="content" align="center"> 
+
+
+<div class="disp_flex" >
+
+    {% if event_list %}   <!--проверка не пустой ли список -->
+
+      {% for event in event_list %}
+
+  <div class="box_inline">
+
+  <div align="center">
+
+  <div class="box">
+
+    {% if event.photo %}   <!--проверка не пустой ли список -->
+    <img src="static{{ event.photo_url }}" height=400 >
+
+
+    {% else %}     <!-- можно использовать elif var2 -->
+
+    <img src="static/css/no_img.jpg" height=400>
+
+    {% endif %} 
+</div> 
+
+  <br>  <b>{{ event.head }}</b> 
+</div> 
+  <div align="justify">
+{{ event.descript|linebreaks }} 
+
+
+
+  </div>
+  </div>
+  &nbsp
+
+      {% endfor %}
+
+    {% else %}     <!-- можно использовать elif var2 -->
+      <p>Нет событий</p>
+    {% endif %} 
+
+
+
+</div>
+</div>
+
+
+
+<footer>
+</footer>
 </body>
