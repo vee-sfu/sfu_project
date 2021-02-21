@@ -28,7 +28,6 @@ html {
 
 .box_inline {width: 20%;
       min-width: 320px;
-      max-width: 480px;
       border: 2px solid black; /* Параметры рамки */
       border-radius: 10px;  /*скругление углов*/
       padding: 15px; /* Поля вокруг текста */
