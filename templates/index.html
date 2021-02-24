@@ -1,26 +1,12 @@
-<!DOCTYPE html>
-
-<html lang="ru">
-
-<head>
-
-<meta charset="UTF-8">
+{% extends "base.html" %}
 
 
-<title>СФУ - ППФ</title>
-
-<link rel="stylesheet" href="static/css/style.css">
-
-
-</head>
-
-<body>
+{% block header %}
+{% endblock header %}
 
 
 
-  <!-- шапка -->
-   <div id="header"> 
-    	</div>
+{% block content %}
 
    <div id="content" align="center"> 
 
@@ -33,11 +19,13 @@
 
   <div class="box_inline">
 
+<a href="{{ event.get_absolute_url }}">
   <div align="center">
+
 
   <div class="box">
 
-    {% if event.photo %}   <!--проверка не пустой ли список -->
+    {% if event.photo %}   <!--проверка есть ли фото -->
     <img src="static{{ event.photo_url }}" height=400 >
 
 
@@ -46,17 +34,23 @@
     <img src="static/css/no_img.jpg" height=400>
 
     {% endif %} 
-</div> 
+</div>   <!--div class="box"-->
+
 
   <br>  <b>{{ event.head }}</b> 
-</div> 
+
+</div>   <!--div align="center"-->
+</a>
+
   <div align="justify">
-{{ event.descript|linebreaks }} 
+{{ event.main_text|linebreaks }} 
 
 
 
-  </div>
-  </div>
+  </div>   <!--div align="justify"-->
+
+  </div>   <!--div class="box_inline"-->
+
   &nbsp
 
       {% endfor %}
@@ -67,11 +61,12 @@
 
 
 
-</div>
-</div>
+</div>   <!--div class="disp_flex" -->
+
+</div>    <!--div id="content" align="center"--> 
+
+
+{% endblock content %}
 
 
 
-<footer>
-</footer>
-</body>

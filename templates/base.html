@@ -1,12 +1,30 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="ru">
+
 <head>
-    <meta charset="utf-8" />
-    <title>{% block title %}Default title{% endblock title %}</title>
+
+<meta charset="UTF-8">
+
+<title>СФУ - ППФ</title>
+
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<!--link rel="stylesheet" href="static/css/style.css"   - прямое указание-->
+
 </head>
+
 <body>
+  <!-- шапка -->
+   <div id="header"> 
+   </div>
+
     <h1>{% block header %}{% endblock header %}</h1>
+
     <div>{% block content%}{% endblock content %}</div>
-    <div>Footer</div>
+
+    <div>Сайт преподавателей и выпускников ППФ СФУ</div>
+
 </body>
+
 </html>

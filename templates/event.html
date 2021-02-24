@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+{% block header %}
+{% endblock header %}
+
+
+
+{% block content %}
+
+   <div class="event_container" align="justify"> 
+   <a href="{% url 'index' %}">На главную</a>
+     <div align="center">
+     <h2> {{ event.head }} </h2>
+     </div>
+
+       <!--div class="event_img_box" align="justify"--> 
+
+         {% if event.photo %}   <!--проверка есть ли фото -->
+ 
+         <img src="../static{{ event.photo_url }}" align="left" width="100%">
+
+         {% else %}     <!-- можно использовать elif var2 -->
+
+         <img src="../static/css/no_img.jpg" align="left" width="100%">
+
+         {% endif %}
+
+       <!--/div-->     <!--div class="event_img_box" align="justify"--> 
+
+
+   {{ event.descript|linebreaks }}
+
+   </div>
+
+
+{% endblock content %}
+
+
+

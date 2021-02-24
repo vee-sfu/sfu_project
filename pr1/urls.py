@@ -26,6 +26,17 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index1', views.index1, name='index1'),
     path('hello', views.hello),
-    url('', views.EventListView.as_view(), name='home'),
 
+#    url('', views.EventListView.as_view(), name='index'), 
+#    или то же самое
+    url(r'^$', views.EventListView.as_view(), name='index'),
+
+    url(r'^event/(?P<pk>\d+)$', views.EventDetailView.as_view(), name='event'),
 ]
+
+
+
+
+
+
+

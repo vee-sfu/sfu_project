@@ -6,7 +6,13 @@ html {
 }
 
 
-/* шапка */
+/*
+#имя - идентификатор id
+.имя - класс
+*/
+
+
+/* шапка   #fad78a - желто-оранжевый цвет */
 
 #header {background-color:#fad78a; width:100%; height:380px;  
 	background-image:url('./header.png'); 
@@ -28,7 +34,7 @@ html {
 
 .box_inline {width: 20%;
       min-width: 320px;
-      max-width: 480px;
+      /*max-width: 480px;*/
       border: 2px solid black; /* Параметры рамки */
       border-radius: 10px;  /*скругление углов*/
       padding: 15px; /* Поля вокруг текста */
@@ -47,7 +53,7 @@ html {
    border-radius: 10px;  /*скругление углов*/
 }
 
-.box img {
+.box img {    /* это стиль для картинки внутри класса .box */
    position: absolute;
    top:50%;
    left:50%;
@@ -58,3 +64,24 @@ html {
 }
 
 
+.event_container {
+      border: 2px solid black; /* Параметры рамки */
+      border-radius: 10px;  /*скругление углов*/
+      padding: 15px; /* Поля вокруг текста */
+      background: #fcf;
+      font-size: 1.4em;
+      height^ 100%;
+      overflow: hidden;   /*чтобы картинка не вылезала по вертикали за пределы контейнера */
+ 
+}
+
+.event_container img {     /* это стиль для картинки внутри класса .event_container */
+/*.event_img_box {     сначала делала как отдельный класс для картинки */
+      border: 2px solid black; /* Параметры рамки */
+      border-radius: 10px;  /*скругление углов*/
+      padding: 5px; /* Поля вокруг текста */
+      max-width:50%;
+    float: left; /* Обтекание по правому краю */
+    background: purple; /* Цвет фона */
+    margin-right: 20px; /* Отступ справа */
+}

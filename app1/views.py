@@ -19,9 +19,35 @@ def index1(request):
 
 from .models import Event    #+
 
-from django.views import generic    #+
+#from django.views import generic    #+
 
-class EventListView(generic.ListView):    #+
+#class EventListView(generic.ListView):    #+ вываливает всю таблицу
+#    model = Event
+#    paginate_by = 10
+#    template_name = 'index.html'
+
+
+from django.views import generic   #+
+
+class EventListView(generic.ListView):    #+ вываливает всю таблицу
     model = Event
     paginate_by = 10
-    template_name = 'index.html'
+    template_name = 'index.html'   # если не указать, ищет event_list.html
+
+class EventDetailView(generic.DetailView):
+    model = Event
+    template_name = 'event.html'   # если не указать, ищет event_detail.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
